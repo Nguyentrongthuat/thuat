@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        label {
+            display: inline-block;
+            width: 7rem;
+        }
+
+        div {
+            margin-top: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 10rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h2> Form Demo</h2>
+    <hr>
+    <h3> Register Form</h3>
+    <form action="d05_form_login.html" onsubmit="readData();">
+        <div>
+            <label for="">user account: </label>
+            <input type="text" name="user" id="user" placeholder="nhap ten tai khoan" required value="Trong Thuat">
+        </div>
+        <div>
+            <label for="">password: </label>
+            <input type="password" name="pass" id="pass" required value="1234">
+        </div>
+        <div>
+            <label for="">Gender: </label>
+            <input type="radio" name="gender" id="gender" value="male" checked> Male
+            <input type="radio" name="gender" id="gender" value="Female"> female
+        </div>
+        <div>
+            <label for=""> Hobbies: </label>
+            <input type="checkbox" name="Hobbies_1" id="hobbies_1" value="da banh" class = "abc"> football
+            <input type="checkbox" name="Hobbies_2" id="hobbies_2" value="an ngoai" checked class = "abc"> eating-out
+            <input type="checkbox" name="Hobbies_2" id="hobbies_2" value="nghe nhac" checked class = "abc"> listening music
+        </div>
+        <div>
+            <label for=""> City: </label>
+            <select name="city" id="city">
+                <option value="SG">Saigon</option>
+                <option value="HN">Hanoi</option>
+                <option value="CT">Cantho</option>
+                <option value="DN">Danang</option>
+            </select>
+        </div>
+        <div><label for=""> Ranking: </label>
+            <input type="number" name="rank" id="rank" min="1" max="5" value="3">
+        </div>
+        <div>
+            <label for="">comments: </label><br>
+            <textarea name="coment" id="comment" cols="30" rows="10"></textarea>
+        </div>
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+    </form>
+
+    <script>
+        function readData(){
+            var user = document.getElementById("user").value;
+            var pass = document.getElementById("pass").value;
+            
+            
+            var a = [];
+            a.push("your Information");
+            a.push("================");
+            a.push(`User Account: ${user}`);
+            a.push(`Password: ${pass}`);
+
+            alert(a.join("\n"));
+
+        }
+    </script>
+</body>
+
+</html>
